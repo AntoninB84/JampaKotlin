@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="priority">
+        <item>Normale</item>
+        <item>Importante</item>
+    </string-array>
+
+    <string-array name="reminders">
+        <item>Alarme</item>
+        <item>Notification</item>
+    </string-array>
+
+    <string-array name="reminder_state">
+        <item>A venir</item>
+        <item>Termin\é</item>
+    </string-array>
+
+    <string-array name="delay_type">
+        <item>Quotidienne</item>
+        <item>Hebdomadaire</item>
+        <item>Mensuelle</item>
+        <item>Annuelle</item>
+        <item>Personnalisée</item>
+    </string-array>
+
+    <string-array name="delay_rec">
+        <item>Jour(s)</item>
+        <item>Semaine(s)</item>
+        <item>Mois</item>
+        <item>An(s)</item>
+    </string-array>
+
+    <string-array name="reminder_custom">
+        <item>Heure(s)</item>
+        <item>Jour(s)</item>
+        <item>Semaine(s)</item>
+        <item>Mois</item>
+    </string-array>
+
+    <string-array name="days">
+        <item>Dimanche</item>
+        <item>Lundi</item>
+        <item>Mardi</item>
+        <item>Mercredi</item>
+        <item>Jeudi</item>
+        <item>Vendredi</item>
+        <item>Samedi</item>
+    </string-array>
+
+</resources>

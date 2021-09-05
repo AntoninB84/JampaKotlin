@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.jampa.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_create_task"
+        android:name="com.example.jampa.ui.createtask.CreateTaskFragment"
+        android:label="@string/title_create_task"
+        tools:layout="@layout/fragment_create_task" />
+
+    <fragment
+        android:id="@+id/navigation_filter"
+        android:name="com.example.jampa.ui.filter.FilterFragment"
+        android:label="@string/title_filter"
+        tools:layout="@layout/fragment_filter" />
+
+    <fragment
+        android:id="@+id/navigation_calendar"
+        android:name="com.example.jampa.ui.calendar.CalendarFragment"
+        android:label="@string/title_calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.jampa.ui.NotificationFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.jampa.ui.category.CategoryFragment"
+        android:label="@string/title_categories"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.jampa.ui.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.example.jampa.ui.StatsFragment"
+        android:label="@string/title_stats"
+        tools:layout="@layout/fragment_stats" />
+
+</navigation>

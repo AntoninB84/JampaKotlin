@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Jampa</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_create_task">Cr\éation</string>
+    <string name="title_filter">Filtrer</string>
+    <string name="title_calendar">Calendrier</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_settings">Pr\éf\érences</string>
+    <string name="title_stats">Statistiques</string>
+    <string name="title_categories">Types et cat\égories</string>
+    <string name="actionbar_search">Rechercher</string>
+    <string name="actionbar_search_hint">Que recherchez-vous ?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Create Task -->
+    <string name="create_task_title">Cr\éation de t\âche</string>
+    <string name="create_task_et_title_hint">Ins\érez un titre</string>
+    <string name="create_task_et_description_hint">Ins\érez une description</string>
+    <string name="create_task_tv_category">Cat\ègorie :</string>
+    <string name="create_task_tv_type">Type :</string>
+    <string name="create_task_tv_priority">Priorit\é :</string>
+    <string name="create_task_tv_recurrency">Planification :</string>
+    <string name="create_task_btn_starting_date">Date d\épart (optionnel)</string>
+    <string name="create_task_btn_end_date">Date limite (optionnel)</string>
+    <string name="create_task_btn_reset_date">Effacer</string>
+    <string name="create_task_btn_hour">Heure</string>
+    <string name="create_task_et_reccurency">Tous les ... à </string>
+    <string name="create_task_btn_reminder_date">Alarme \n(optionnel)</string>
+    <string name="create_task_et_reminder_custom">A ... avant \échance</string>
+    <string name="create_task_tv_delay">R\ép\éter tous les </string>
+    <string name="create_btn_validate">Cr\éer une t\âche</string>
+    <string name="create_tv_daily_alarm">Une alarme sonnera à %1d </string>
+    <string name="create_invalid_inputs_message">Veuillez donner un titre et une description \à la t\âche</string>
+    <string name="create_invalid_hour_message">Veuillez s\électionner une heure de r\éalisation</string>
+    <string name="create_invalid_days_message">Veuillez renseigner le champs du/des jour(s)</string>
+    <string name="create_invalid_date_message">Veuillez s\électionner une date</string>
+
+    <!-- Short term-types -->
+    <string name="term_type_r_short">R</string>
+    <string name="term_type_st_short">CT</string>
+    <string name="term_type_mt_short">MT</string>
+    <string name="term_type_lt_short">LT</string>
+    <!-- Long term-types -->
+    <string name="term_type_r_long">R\écurrente</string>
+    <string name="term_type_st_long">Court-Terme</string>
+    <string name="term_type_mt_long">Moyen-Terme</string>
+    <string name="term_type_lt_long">Long-Terme</string>
+    <!-- Term-types explanations -->
+    <string name="term_type_r_explanation">T\âche \à r\écurrence personnalis\ée</string>
+    <string name="term_type_ct_explanation">T\âche \à court-terme avec/sans \éch\éance</string>
+    <string name="term_type_mt_explanation">T\âche \à moyen-terme avec/sans \éch\éance</string>
+    <string name="term_type_lt_explanation">T\âche \à long-terme avec/sans \éch\éance</string>
+
+    <!-- Add category & type -->
+    <string name="cat_typ_title_cat">Cat\égories</string>
+    <string name="cat_typ_title_typ">Types</string>
+    <string name="cat_typ_et_placeholder">Ins\érer un nom</string>
+    <string name="cat_typ_add_btn">Ajouter</string>
+    <string name="cat_typ_add_btn_mod">Modifier</string>
+    <string name="cat_typ_add_btn_cancel">Annuler</string>
+    <string name="cat_typ_del_btn">Supprimer</string>
+
+    <!-- Reminder type-->
+    <string name="reminder_type_notification">Notification</string>
+    <string name="reminder_type_alarm">Alarme</string>
+
+    <!-- State -->
+    <string name="state_ongoing">En cours</string>
+    <string name="state_finished">Fini</string>
+    <string name="state_failed">Oubli\é</string>
+    <string name="state_succeded">Accompli</string>
+
+
+</resources>

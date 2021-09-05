@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="createTaskViewModel"
+            type="com.example.jampa.ui.createtask.CreateTaskViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/create_et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/create_task_et_title_hint"
+                android:minHeight="48dp"
+                android:singleLine="true" />
+            <EditText
+                android:id="@+id/create_et_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:hint="@string/create_task_et_description_hint"
+                android:inputType="textMultiLine"
+                android:lines="6"
+                android:visibility="visible"/>
+
+            <!-- Spinners -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/create_tv_category"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:labelFor="@id/create_sp_category"
+                    android:gravity="center"
+                    android:text="@string/create_task_tv_category"
+                    android:textSize="18sp" />
+                <Spinner
+                    android:id="@+id/create_sp_category"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:minHeight="48dp"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/create_tv_type"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:labelFor="@id/create_sp_type"
+                    android:gravity="center"
+                    android:text="@string/create_task_tv_type"
+                    android:textSize="18sp" />
+                <Spinner
+                    android:id="@+id/create_sp_type"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:minHeight="48dp"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/create_tv_priority"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:labelFor="@id/create_sp_priority"
+                    android:gravity="center"
+                    android:text="@string/create_task_tv_priority"
+                    android:textSize="18sp" />
+                <Spinner
+                    android:id="@+id/create_sp_priority"
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:minHeight="48dp"
+                    android:layout_marginStart="16dp"
+                    android:entries="@array/priority"/>
+            </LinearLayout>
+
+            <!-- Recurrence type -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/create_task_tv_recurrency"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <RadioGroup
+                android:id="@+id/create_rg_recurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal"
+                android:weightSum="8">
+
+                <RadioButton
+                    android:id="@+id/create_rb_r"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:onClick="@{() -> createTaskViewModel.setRecurrencyType(0)}"
+                    android:text="@string/term_type_r_short"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/create_rb_ct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:checked="true"
+                    android:onClick="@{() -> createTaskViewModel.setRecurrencyType(1)}"
+                    android:text="@string/term_type_st_short"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/create_rb_mt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:onClick="@{() -> createTaskViewModel.setRecurrencyType(2)}"
+                    android:text="@string/term_type_mt_short"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/create_rb_lt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:onClick="@{() -> createTaskViewModel.setRecurrencyType(3)}"
+                    android:text="@string/term_type_lt_short"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/create_tv_explanation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="-8dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="14sp"/>
+
+            <!-- End date selection -->
+            <LinearLayout
+                android:id="@+id/create_llyt_end_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <Button
+                    android:id="@+id/create_btn_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="150dp"
+                    android:onClick="@{() -> createTaskViewModel.selectEndDate()}"
+                    android:text="@string/create_task_btn_end_date" />
+                <TextView
+                    android:id="@+id/create_tv_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{ createTaskViewModel.completeEndDate}"
+                    android:textSize="16sp"/>
+                <Button
+                    android:id="@+id/create_btn_reset_end_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="150dp"
+                    android:visibility="gone"
+                    android:onClick="@{() -> createTaskViewModel.resetEndDate()}"
+                    android:text="@string/create_task_btn_reset_date"/>
+            </LinearLayout>
+
+            <!-- Recurrence delay -->
+            <LinearLayout
+                android:id="@+id/create_llyt_delay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <Spinner
+                    android:id="@+id/create_sp_delay_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:minHeight="48dp"
+                    android:entries="@array/delay_type"/>
+                <LinearLayout
+                    android:id="@+id/create_llyt_delay_options"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/create_et_date_and_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minHeight="48dp"
+                        android:inputType="number"
+                        android:hint="@string/create_task_et_reccurency"/>
+                    <Spinner
+                        android:id="@+id/create_sp_delay_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:entries="@array/days"/>
+                    <Spinner
+                        android:id="@+id/create_sp_delay_rec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:entries="@array/delay_rec"/>
+                    <Button
+                        android:id="@+id/create_btn_rec_date_and_hour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:text="@string/create_task_btn_hour"
+                        android:onClick="@{() -> createTaskViewModel.recHourDateSelected()}"/>
+
+                    <TextView
+                        android:id="@+id/create_tv_rec_hour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center"
+                        android:text="@{createTaskViewModel.reccurencyHour}"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Start date -->
+                <LinearLayout
+                    android:id="@+id/create_llyt_start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    <Button
+                        android:id="@+id/create_btn_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="150dp"
+                        android:onClick="@{()-> createTaskViewModel.selectStartDate()}"
+                        android:text="@string/create_task_btn_starting_date" />
+                    <TextView
+                        android:id="@+id/create_tv_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@{ createTaskViewModel.completeStartDate}"
+                        android:textSize="16sp" />
+                    <Button
+                        android:id="@+id/create_btn_reset_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxWidth="150dp"
+                        android:visibility="gone"
+                        android:onClick="@{() -> createTaskViewModel.resetStartDate()}"
+                        android:text="@string/create_task_btn_reset_date"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Reminder DATE setup -->
+            <LinearLayout
+                android:id="@+id/create_llyt_reminders_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/create_btn_reminder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:onClick="@{()-> createTaskViewModel.selectReminderDate()}"
+                        android:text="@string/create_task_btn_reminder_date"/>
+                    <TextView
+                        android:id="@+id/create_tv_reminder_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="@{ createTaskViewModel.completeReminderDate}"
+                        android:textSize="16sp" />
+                    <Button
+                        android:id="@+id/create_btn_reset_reminder_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="@{()-> createTaskViewModel.resetReminderDate()}"
+                        android:text="@string/create_task_btn_reset_date"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Reminder DELAY setup -->
+            <LinearLayout
+                android:id="@+id/create_llyt_reminders_delay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/create_btn_reminder_displayer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:onClick="@{()-> createTaskViewModel.showReminderDelay()}"
+                        android:text="@string/create_task_btn_reminder_date"
+                        android:visibility="gone"/>
+                    <LinearLayout
+                        android:id="@+id/create_llyt_reminders_custom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+                        <EditText
+                            android:id="@+id/create_et_reminder_custom_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:minHeight="48dp"
+                            android:inputType="number"
+                            android:hint="@string/create_task_et_reminder_custom"/>
+                        <Spinner
+                            android:id="@+id/create_sp_delay_reminder_custom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minHeight="48dp"
+                            android:entries="@array/reminder_custom"/>
+                        <Button
+                            android:id="@+id/create_btn_remove_reminder_delay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{()-> createTaskViewModel.resetReminderDelay()}"
+                            android:text="@string/cat_typ_add_btn_cancel" />
+                    </LinearLayout>
+                </LinearLayout>
+            <RadioGroup
+                android:id="@+id/create_rg_reminder_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:visibility="gone">
+                <RadioButton
+                    android:id="@+id/create_rb_remind_notif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:checked="true"
+                    android:onClick="@{() -> createTaskViewModel.setReminderType(0)}"
+                    android:text="@string/reminder_type_notification"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+                <RadioButton
+                    android:id="@+id/create_rb_remind_alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:onClick="@{() -> createTaskViewModel.setReminderType(1)}"
+                    android:text="@string/reminder_type_alarm"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+            <!-- Validate button -->
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="100dp"
+                android:text="@string/create_btn_validate"
+                android:onClick="@{() -> createTaskViewModel.createTask()}"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </ScrollView>
+</layout>
